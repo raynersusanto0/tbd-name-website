@@ -3,9 +3,9 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-6 items-center row-start-1 sm:items-center max-w-7xl">
+      <main className="flex flex-col gap-8 items-center row-start-1 sm:items-center max-w-7xl">
         <div className="flex items-center flex-col sm:flex-row">
-          <h1 className="text-5xl text-center"> Welcome to Our Website </h1>
+          <h1 className="text-9xl text-center"> Welcome to <br></br> Our Website </h1>
         </div>
 
         <div className="flex items-center flex-col sm:flex-row">
