@@ -52,7 +52,7 @@ export default function RootLayout({
               <div className="flex justify-between items-center h-16">
                 <div className="flex-shrink-0 flex items-center">
                   <Link href="/" className="text-2xl font-bold text-gray-900">
-                    PanduWeb
+                    S&N Software
                   </Link>
                 </div>
                 <nav className="hidden md:flex space-x-4">
