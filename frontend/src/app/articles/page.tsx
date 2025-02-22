@@ -1,9 +1,10 @@
 export default function Articles() {
     return (
-      <div>
-        <h1>Articles</h1>
-        <p>Browse our latest articles and blog posts.</p>
-      </div>
+    <div className="p-8">
+      <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-center">
+      Welcome to Our Website
+      </h1>
+    </div>
     )
   }
   
