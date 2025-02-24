@@ -5,6 +5,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import { Home, Info, FileText, DollarSign, Mail, LucideIcon } from "lucide-react";
+import { MobileMenu } from "@/components/mobile-navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pandu Web Agency",
+  title: "S&N Software",
   description: "Pandu Web Landing Page",
 };
 
@@ -31,7 +32,7 @@ function NavLink({ href, children, icon: Icon }: NavLinkProps) {
   return (
     <Link
       href={href}
-      className={"flex items-center px-4 py-2 rounded-md transition-colors text-gray-600 hover:bg-gray-50 hover:text-gray-900"}
+      className={"flex items-center px-4 py-2 rounded-md transition-colors text-gray-600 hover:bg-gray-200 hover:text-gray-900"}
     >
       <Icon className="w-5 h-5 mr-2" />
       {children}
@@ -47,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header>
+        <header className="sticky  top-0 z-10 bg-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex justify-between items-center h-16">
                 <div className="flex-shrink-0 flex items-center">
@@ -62,9 +63,6 @@ export default function RootLayout({
                   <NavLink href="/about" icon={Info}>
                     About
                   </NavLink>
-                  <NavLink href="/articles" icon={FileText}>
-                    Articles
-                  </NavLink>
                   <NavLink href="/pricing" icon={DollarSign}>
                     Pricing
                   </NavLink>
@@ -72,6 +70,7 @@ export default function RootLayout({
                     Contact
                   </NavLink>
                 </nav>
+                <MobileMenu />
               </div>
             </div>
         </header>
