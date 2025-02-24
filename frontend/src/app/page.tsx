@@ -20,20 +20,21 @@ export default function Home() {
           </div>
 
           <div className="flex flex-row items-center justify-between sm:flex-row w-full">
-              <h3 className="text-lg flex-1 text-start"> Customer Support #1 </h3>
-              <h3 className="text-lg flex-1 text-center"> Understand YOUR Needs</h3>
-              <h3 className="text-lg flex-1 text-end"> Lovable Products </h3>
+              <h3 className="text-lg flex-1 text-start"> Customer Focused </h3>
+              <h3 className="text-lg flex-1 text-center"> Understanding YOUR Needs</h3>
+              <h3 className="text-lg flex-1 text-end"> SEO Friendly Products </h3>
           </div>
         </main>
       </div>
 
-      <section className="mx-auto w-full bg-gray-200">
-          <div className="mx-auto p-10">
+      <section className="mx-auto w-full">
+          <div className="mx-auto p-10 bg-gray-200">
             <h3 className="text-5xl text-start">Solutions We Provide</h3>
             <p className="text-xl text-start">
             We offer a wide range of solutions to meet your needs. Our team is dedicated to delivering high-quality software that makes your life easier.
             </p>
           </div>
+          
       </section>
     </div>
    

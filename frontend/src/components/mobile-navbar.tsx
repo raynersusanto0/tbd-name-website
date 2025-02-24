@@ -5,7 +5,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 // import { Button } from "@/components/button"
-import { Home, Info, FileText, DollarSign, Mail, LucideIcon } from "lucide-react";
+import { Home, Info, AppWindow, Mail, LucideIcon } from "lucide-react";
 
 interface NavItem {
   href: string
@@ -59,13 +59,13 @@ export function MobileMenu() {
                 About
             </Link>
             <Link
-              key = "Pricing"
-              href = "/pricing"
+              key = "Portfolio"
+              href = "/portfolio"
               className = "flex items-center px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900"
               onClick={ () => setIsOpen(false) }
             >
-                <DollarSign className="w-5 h-5 mr-2" />
-                Pricing
+                <AppWindow className="w-5 h-5 mr-2" />
+                Portfolio
             </Link>
             <Link
               key = "Contact"

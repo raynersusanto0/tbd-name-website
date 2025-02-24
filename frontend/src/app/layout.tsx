@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-import { Home, Info, FileText, DollarSign, Mail, LucideIcon } from "lucide-react";
+import { Home, Info, AppWindow, Mail, LucideIcon } from "lucide-react";
 import { MobileMenu } from "@/components/mobile-navbar";
 
 const geistSans = Geist({
@@ -63,8 +63,8 @@ export default function RootLayout({
                   <NavLink href="/about" icon={Info}>
                     About
                   </NavLink>
-                  <NavLink href="/pricing" icon={DollarSign}>
-                    Pricing
+                  <NavLink href="/portfolio" icon={AppWindow}>
+                    Portfolio
                   </NavLink>
                   <NavLink href="/contact" icon={Mail}>
                     Contact
