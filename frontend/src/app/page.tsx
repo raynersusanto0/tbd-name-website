@@ -1,4 +1,5 @@
 import Image from "next/image";
+import  Carousel  from "@/components/carousel";
 
 export default function Home() {
   return (
@@ -34,7 +35,8 @@ export default function Home() {
             We offer a wide range of solutions to meet your needs. Our team is dedicated to delivering high-quality software that makes your life easier.
             </p>
           </div>
-          
+
+          < Carousel />
       </section>
     </div>
    

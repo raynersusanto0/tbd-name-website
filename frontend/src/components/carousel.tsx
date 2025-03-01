@@ -1,74 +1,61 @@
 "use client"
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+import React, {useEffect, useState} from 'react';
+// import ExampleCarouselImage from 'components/ExampleCarouselImage';
 
-import React, { useState, useRef, useEffect } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-
-interface CarouselProps {
-  children: React.ReactNode
-  itemWidth?: number
-  gap?: number
-}
-
-export function Carousel({ children, itemWidth = 300, gap = 20 }: CarouselProps) {
-  const [scrollPosition, setScrollPosition] = useState(0)
-  const containerRef = useRef<HTMLDivElement>(null)
-
-  const handleScroll = (direction: "left" | "right") => {
-    if (containerRef.current) {
-      const container = containerRef.current
-      const scrollAmount = itemWidth + gap
-      const newPosition =
-        direction === "left"
-          ? Math.max(scrollPosition - scrollAmount, 0)
-          : Math.min(scrollPosition + scrollAmount, container.scrollWidth - container.clientWidth)
-
-      container.scrollTo({ left: newPosition, behavior: "smooth" })
-      setScrollPosition(newPosition)
+const Carousel = () => {
+  const [sliderRef, slider] = useKeenSlider(
+    {
+      loop: true,
+      slides: {
+        perView: 1,
+        spacing: 16,
+      },
     }
-  }
+  );
 
-  useEffect(() => {
-    const container = containerRef.current
-    if (container) {
-      const handleScrollEvent = () => {
-        setScrollPosition(container.scrollLeft)
-      }
-      container.addEventListener("scroll", handleScrollEvent)
-      return () => container.removeEventListener("scroll", handleScrollEvent)
-    }
-  }, [])
+
+  const slides = [
+    {
+      id: 1,
+      content: (
+        <div className="flex items-center justify-center h-64 bg-blue-500 text-white text-2xl">
+          Slide 1
+        </div>
+      ),
+    },
+    {
+      id: 2,
+      content: (
+        <div className="flex items-center justify-center h-64 bg-green-500 text-white text-2xl">
+          Slide 2
+        </div>
+      ),
+    },
+    {
+      id: 3,
+      content: (
+        <div className="flex items-center justify-center h-64 bg-red-500 text-white text-2xl">
+          Slide 3
+        </div>
+      ),
+    },
+  ];
 
   return (
-    <div className="relative">
-      <div
-        ref={containerRef}
-        className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory"
-        style={{ scrollBehavior: "smooth" }}
-      >
-        {React.Children.map(children, (child, index) => (
-          <div
-            key={index}
-            className="flex-shrink-0 snap-start"
-            style={{ width: `${itemWidth}px`, marginRight: `${gap}px` }}
-          >
-            {child}
-          </div>
-        ))}
+    <div className="w-full">
+      <div className="max-w-3xl mx-auto p-4">
+        <div ref={sliderRef} className="keen-slider">
+          {slides.map((slide) => (
+            <div key={slide.id} className="keen-slider__slide">
+              {slide.content}
+            </div>
+          ))}
+        </div>
       </div>
-      <button
-        onClick={() => handleScroll("left")}
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 shadow-md"
-        aria-label="Scroll left"
-      >
-        <ChevronLeft size={24} />
-      </button>
-      <button
-        onClick={() => handleScroll("right")}
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 shadow-md"
-        aria-label="Scroll right"
-      >
-        <ChevronRight size={24} />
-      </button>
     </div>
-  )
-}
+  );
+};
+
+export default Carousel;

@@ -3,6 +3,7 @@ import type React from "react"
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Link from "next/link";
 import { Home, Info, AppWindow, Mail, LucideIcon } from "lucide-react";
 import { MobileMenu } from "@/components/mobile-navbar";
