@@ -3,7 +3,6 @@ import type React from "react"
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Link from "next/link";
 import { Home, Info, AppWindow, Mail, LucideIcon } from "lucide-react";
 import { MobileMenu } from "@/components/mobile-navbar";
@@ -20,7 +19,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "S&N Software",
-  description: "Pandu Web Landing Page",
+  description: "S&N Software Landing Page",
 };
 
 interface NavLinkProps {
